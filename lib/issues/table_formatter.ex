@@ -1,6 +1,9 @@
 defmodule Issues.TableFormatter do
   import Enum, only: [each: 2, map: 2, map_join: 3, max: 1]
 
+  @doc """
+  print table for columns
+  """
   def print_table_for_columns(rows, headers) do
     with data_by_columns = split_into_columns(rows, headers),
          column_widths   = widths_of(data_by_columns),
@@ -12,12 +15,18 @@ defmodule Issues.TableFormatter do
     end
   end
 
+  @doc """
+  split into columns
+  """
   def split_into_columns(rows, headers) do
     for header <- headers do
       for row <- rows, do: printable(row[header])
     end
   end
 
+  @doc """
+  return a binary (string) version of our parameter
+  """
   def printable(str) when is_binary(str), do: str
   def printable(str), do: to_string(str)
 

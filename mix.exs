@@ -21,7 +21,8 @@ defmodule Issues.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      { :httpoison, "~> 0.8" }
+      { :httpoison, "~> 0.8" },
+      { :poison, "~> 1.5" }
     ]
   end
 end

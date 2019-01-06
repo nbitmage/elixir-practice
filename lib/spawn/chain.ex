@@ -17,7 +17,7 @@ defmodule Spawn.Chain do
     end
   end
 
-  def main(n) do
+  def run(n) do
     IO.puts inspect :timer.tc(__MODULE__, :create_processes, [n])
   end
 end
